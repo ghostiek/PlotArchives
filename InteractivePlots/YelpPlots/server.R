@@ -1,9 +1,11 @@
 library(shiny)
+library(dplyr)
+library(jsonlite)
 
-#business <- readLines("~/dataset/business.json", n = 10000) %>%
-#  lapply(fromJSON)
-#business_info <- lapply(1:length(business), function(x) unlist(business[[x]][c(1,10,11)])) %>%
-#  do.call(rbind, .) %>% as.data.frame(stringsAsFactors=FALSE)
+business <- readLines("~/dataset/business.json", n = 10000) %>%
+  lapply(fromJSON)
+business_info <- lapply(1:length(business), function(x) unlist(business[[x]][c(1,10,11)])) %>%
+  do.call(rbind, .) %>% as.data.frame(stringsAsFactors=FALSE)
 
 shinyServer(
   function(input, output){
