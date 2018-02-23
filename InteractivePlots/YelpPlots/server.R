@@ -12,7 +12,7 @@ shinyServer(
     output$plot1 <- renderPlot({
       ggplot(business_info[business_info$stars==input$slide,], aes(as.numeric(business_info[business_info$stars==input$slide,]$review_count))) +
         geom_density() +
-        xlim(0,100) +
+        xlim(input$xmin, input$xmax) +
         xlab("Number of Reviews") +
         ggtitle(paste("Numer of Reviews vs.", input$slide, "Star Rating"))
       })
