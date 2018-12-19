@@ -1,2 +1,3 @@
 # PlotArchives
-A list of plots I have saved
+
+This repository consists of my favorite plots I made.
